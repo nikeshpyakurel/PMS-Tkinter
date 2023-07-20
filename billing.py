@@ -11,7 +11,7 @@ height_screen = root.winfo_screenheight()
 root.title("Medicine/pharmacy_management_system")
 root.geometry(f"{width_screen}x{height_screen}")
 root.minsize("400", "300")
-root.iconbitmap('medicine.ico')
+root.iconbitmap('./assets/medicine.ico')
 root.state("zoomed")
 # ****************************dashboard frame************************************
 frame = Frame(width=160, padx=30, bg='#363740')
@@ -19,7 +19,7 @@ frame.pack(side=LEFT, fill=Y)
 
 
 # ****************************logo image************************************
-logoImg = PhotoImage(file='logo.png')
+logoImg = PhotoImage(file='./assets/logo.png')
 logo = Label(image=logoImg, bg='white', fg='black', width=159, height=27)
 logo.place(x=0, y=0)
 
@@ -79,7 +79,7 @@ def save():
     else:
         try:
             con = mysql.connect(host='localhost', user='root',
-                                password="saroj@0777", port="3306", database='pharmacy')
+                                password="", port="3306", database='pharmacy_management_system')
             mycursor = con.cursor()
         except:
             messagebox.showerror(
@@ -150,7 +150,7 @@ heading = Label(frame1, text='ABC Pharmacy Store', bg='#FAFAFA',
 heading.place(x=100, y=5)
 
 # ************* profile image****************************
-profileImg = PhotoImage(file='profile.png')
+profileImg = PhotoImage(file='./assets/profile.png')
 profile = Label(image=profileImg, fg='black', bg='#FAFAFA')
 profile.place(x=1050, y=0)
 name = Label(text="Admin", fg='black', bg='#FAFAFA', font=("Poppins", 10))
