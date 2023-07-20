@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 06, 2023 at 09:47 AM
+-- Generation Time: Jul 20, 2023 at 08:10 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 7.4.29
 
@@ -35,6 +35,13 @@ CREATE TABLE `admin` (
   `password` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `admin`
+--
+
+INSERT INTO `admin` (`adminId`, `name`, `address`, `email`, `password`) VALUES
+(1, 'Test User', 'Kathmandu', 'test@gmail.com', 'test');
+
 -- --------------------------------------------------------
 
 --
@@ -57,8 +64,16 @@ CREATE TABLE `medicine` (
   `name` varchar(255) NOT NULL,
   `category` varchar(255) NOT NULL,
   `price` int(11) NOT NULL,
-  `stock` int(11) NOT NULL
+  `quantity` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `medicine`
+--
+
+INSERT INTO `medicine` (`medicineId`, `name`, `category`, `price`, `quantity`) VALUES
+(1, 'Flexon', 'fever', 20, 399),
+(2, 'sinux', 'fever', 20, 400);
 
 -- --------------------------------------------------------
 
@@ -73,6 +88,13 @@ CREATE TABLE `user` (
   `contactNo` varchar(255) NOT NULL,
   `address` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `user`
+--
+
+INSERT INTO `user` (`userId`, `name`, `email`, `contactNo`, `address`) VALUES
+(1, 'Nikesh Pyakurel', 'nikesh@gmail.com', '9863015479', 'Biratnagar');
 
 --
 -- Indexes for dumped tables
@@ -113,7 +135,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `admin`
 --
 ALTER TABLE `admin`
-  MODIFY `adminId` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `adminId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `category`
@@ -125,13 +147,13 @@ ALTER TABLE `category`
 -- AUTO_INCREMENT for table `medicine`
 --
 ALTER TABLE `medicine`
-  MODIFY `medicineId` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `medicineId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `userId` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `userId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
