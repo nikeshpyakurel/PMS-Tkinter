@@ -72,7 +72,7 @@ def settings():
 def search():
     try:
         con = mysql.connect(host='localhost', user='root',
-                            password="saroj@0777", port="3306", database='pharmacy')
+                            password="", port="3306", database='pharmacy_management_system')
         mycursor = con.cursor()
     except:
         messagebox.showerror(
@@ -93,7 +93,7 @@ def medsearch():
     global x
     try:
         con = mysql.connect(host='localhost', user='root',
-                            password="saroj@0777", port="3306", database='pharmacy')
+                            password="", port="3306", database='pharmacy_management_system')
         mycursor = con.cursor()
     except:
         messagebox.showerror(
@@ -133,7 +133,7 @@ def nikal():
     global x
     try:
         con = mysql.connect(host='localhost', user='root',
-                            password="saroj@0777", port="3306", database='pharmacy')
+                            password="", port="3306", database='pharmacy_management_system')
         mycursor = con.cursor()
     except:
         messagebox.showerror(
