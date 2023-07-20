@@ -54,12 +54,12 @@ def category():
 def billing():
     root.destroy()
     import billing
-# setting function
+# settings function
 
 
-def setting():
+def settings():
     root.destroy()
-    import setting
+    import settings
 
 # username  function
 
@@ -103,7 +103,7 @@ def hide1():
 def save():
     try:
         con = mysql.connect(host='localhost', user='root',
-                            password="", port="3306", database='pharmacy_management_system')
+                            password="saroj@0777", port="3306", database='pharmacy')
         mycursor = con.cursor()
     except:
         messagebox.showerror("error", "connection error")
@@ -141,7 +141,7 @@ billing = Button(text='Billing', border=0, bg='#363740', fg='white', font=(
     "Inter", 10, "bold"), cursor='hand2', command=billing)
 billing.place(x=10, y=170)
 setting = Button(text='Pharmacy Setting', width=19, border=0, bg='#595B67',
-                 fg='white', font=("Inter", 10, "bold"), cursor='hand2', command=setting)
+                 fg='white', font=("Inter", 10, "bold"), cursor='hand2', command=settings)
 setting.place(x=1, y=210, height=40)
 # indicator for setting
 setting_indicator = Button(root, text='', bg='#FF702A')
@@ -169,16 +169,16 @@ profile = Label(image=profileImg, fg='black', bg='#FAFAFA')
 profile.place(x=1050, y=0)
 name = Label(text="Admin", fg='black', bg='#FAFAFA', font=("Poppins", 10))
 name.place(x=1100, y=25)
-name = Label(text="Test", bg='#FAFAFA',
+name = Label(text="Saroj Kumar Sah", bg='#FAFAFA',
              fg='black', font=("Poppins", 10))
 name.place(x=1100, y=5)
 
 # frame for displaying setting details
 display_frame = Frame(root, bg='#FAFAFA', width=624, height=550)
 display_frame.place(x=350, y=100)
-setting = Label(root, text='Pharmacy setting', fg='#363740',
-                bg='#fafafa', font=('inter', 15, 'bold'))
-setting.place(x=360, y=110)
+settings = Label(root, text='Pharmacy Settings', fg='#363740',
+                 bg='#fafafa', font=('inter', 15, 'bold'))
+settings.place(x=360, y=110)
 # username
 username = Entry(root, fg='black', bg='#FAFAFA', border=1, font=(
     'microsoft yaHei UI light', 15), width=40, cursor='hand2')
