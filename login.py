@@ -10,7 +10,7 @@ height_screen = root.winfo_screenheight()
 root.title("login page")
 root.geometry(f"{width_screen}x{height_screen}")
 root.minsize(400, 400)
-root.iconbitmap('medicine.ico')
+root.iconbitmap('./assets/medicine.ico')
 root.configure(bg='#fff')
 root.state('zoomed')
 #  signin function
@@ -23,12 +23,12 @@ def signin():
     else:
         try:
             con = mysql.connect(host='localhost', user='root',
-                                password="saroj@0777", port="3306", database='pharmacy')
+                                password="", port="3306", database='pharmacy_management_system')
             mycursor = con.cursor()
         except:
             messagebox.showerror("error", "connection error")
             return
-        query = 'use pharmacy'
+        query = 'use pharmacy_management_system'
         mycursor.execute(query)
         query = 'select * from admin where email=%s and password=%s'
         mycursor.execute(query, (username.get(), code.get()))
@@ -48,29 +48,29 @@ def forget():
     top.state('zoomed')
 
     def show():
-        eyeimg.config(file='icons8-eye-24.png')
+        eyeimg.config(file='./assets/icons8-eye-24.png')
         new_password.config(show="")
         eyebutton.config(command=hide)
 
     def hide():
-        eyeimg.config(file='icons8-closed-eye-24.png')
+        eyeimg.config(file='./assets/icons8-closed-eye-24.png')
         new_password.config(show='*')
         eyebutton.config(command=show)
 
     def show1():
-        eyeimg2.config(file='icons8-eye-24.png')
+        eyeimg2.config(file='./assets/icons8-eye-24.png')
         confirm_password.config(show="")
         eyebutton2.config(command=hide1)
 
     def hide1():
-        eyeimg2.config(file='icons8-closed-eye-24.png')
+        eyeimg2.config(file='./assets/icons8-closed-eye-24.png')
         confirm_password.config(show='*')
         eyebutton2.config(command=show1)
 
     def save():
         try:
             con = mysql.connect(host='localhost', user='root',
-                                password="saroj@0777", port="3306", database='pharmacy')
+                                password="", port="3306", database='pharmacy_management_system')
             mycursor = con.cursor()
         except:
             messagebox.showerror("error", "connection error")
@@ -93,9 +93,9 @@ def forget():
         # frame for displaying setting details
     display_frame = Frame(top, bg='#FAFAFA', width=624, height=550)
     display_frame.place(x=350, y=100)
-    settings = Label(top, text='Forget Password', fg='#363740',
-                     bg='#fafafa', font=('inter', 15, 'bold'))
-    settings.place(x=360, y=110)
+    setting = Label(top, text='Forget Password', fg='#363740',
+                    bg='#fafafa', font=('inter', 15, 'bold'))
+    setting.place(x=360, y=110)
     # username  function
 
     def on_enter(e):
@@ -149,7 +149,7 @@ def forget():
     confirm_password.insert(5, 'Confirm Password')
     confirm_password.bind('<FocusIn>', on_enter)
     confirm_password.bind('<FocusOut>', on_leave)
-    eyeimg2 = PhotoImage(file='icons8-closed-eye-24.png')
+    eyeimg2 = PhotoImage(file='./assets/icons8-closed-eye-24.png')
     eyebutton2 = Button(top, image=eyeimg2, bd=0, bg='white',
                         activebackground='white', cursor='hand2', command=show1)
     eyebutton2.place(x=855, y=410)
@@ -161,13 +161,13 @@ def forget():
 
 # to show and hide in password field
 def show():
-    eyeimg.config(file='icons8-eye-24.png')
+    eyeimg.config(file='./assets/icons8-eye-24.png')
     code.config(show="")
     eyebutton.config(command=hide)
 
 
 def hide():
-    eyeimg.config(file='icons8-closed-eye-24.png')
+    eyeimg.config(file='./assets/icons8-closed-eye-24.png')
     code.config(show='*')
     eyebutton.config(command=show)
 
@@ -175,7 +175,7 @@ def hide():
 # pharmacy image
 frame1 = Frame(width=width_screen/2, height=height_screen, bg='#FF702A')
 frame1.place(x=650, y=0)
-img = PhotoImage(file='pharma-removebg-preview.png')
+img = PhotoImage(file='./assets/pharma-removebg-preview.png')
 Label(image=img, width=500, border=0, bg='#FF702A').place(x=717, y=10)
 Label(text='''A computerized software application
 designed to streamline and automate
@@ -243,7 +243,7 @@ code.insert(5, 'password')
 code.bind('<FocusIn>', on_enter)
 code.bind('<FocusOut>', on_leave)
 # eye button on password
-eyeimg = PhotoImage(file='icons8-closed-eye-24.png')
+eyeimg = PhotoImage(file='./assets/icons8-closed-eye-24.png')
 eyebutton = Button(root, image=eyeimg, bd=0, bg='white',
                    activebackground='white', cursor='hand2', command=show)
 eyebutton.place(x=550, y=300)

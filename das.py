@@ -9,7 +9,7 @@ height_screen = root.winfo_screenheight()
 root.title("dashboard/pharmacy_management_system")
 root.geometry(f"{width_screen}x{height_screen}")
 root.minsize("400", "300")
-root.iconbitmap('medicine.ico')
+root.iconbitmap('./assets/medicine.ico')
 root.state("zoomed")
 # root.configure(bg='blu')
 # ****************************dashboard frame************************************
@@ -18,7 +18,7 @@ frame.pack(side=LEFT, fill=Y)
 
 
 # ****************************logo image************************************
-logoImg = PhotoImage(file='logo.png')
+logoImg = PhotoImage(file='./assets/logo.png')
 logo = Label(image=logoImg, bg='white', fg='black', width=159, height=27)
 logo.place(x=0, y=0)
 
@@ -56,18 +56,18 @@ def category():
 def billing():
     root.destroy()
     import billing
-# settings function
+# setting function
 
 
-def settings():
+def setting():
     root.destroy()
-    import settings
+    import setting
 
 
 # data base
 try:
     con = mysql.connect(host='localhost', user='root',
-                        password="saroj@0777", port="3306", database='pharmacy')
+                        password="", port="3306", database='pharmacy_management_system')
     mycursor = con.cursor()
 except:
     messagebox.showerror("error", "connection error")
@@ -97,7 +97,7 @@ billing = Button(text='Billing', border=0, bg='#363740', fg='white', font=(
     "Inter", 10, "bold"), cursor='hand2', command=billing)
 billing.place(x=10, y=170)
 setting = Button(text='Pharmacy Setting', border=0, bg='#363740', fg='white', font=(
-    "Inter", 10, "bold"), cursor='hand2', command=settings)
+    "Inter", 10, "bold"), cursor='hand2', command=setting)
 setting.place(x=10, y=210)
 # indicator for dashboard
 dashboard_indicator = Button(root, text='', bg='#FF702A')
@@ -121,21 +121,21 @@ heading.place(x=100, y=5)
 
 # # select button
 # def comboFunction(e):#function for selecting
-#     combo.set("saroj kumar sah")
+#     combo.set("Test")
 
-# combo = ttk.Combobox(root, values=["saroj kumar sah","Log Out"])
+# combo = ttk.Combobox(root, values=["Test","Log Out"])
 # combo.place(x=1100,y=0)
 # combo.config(width=15)
 # combo.config(height=15)
-# combo.set("saroj kumar sah")
+# combo.set("Test")
 # combo.bind('<<ComboboxSelected>>',comboFunction)
 # combo['state']='readonly'
-profileImg = PhotoImage(file='profile.png')
+profileImg = PhotoImage(file='./assets/profile.png')
 profile = Label(image=profileImg, fg='black', bg='#FAFAFA')
 profile.place(x=1050, y=0)
 name = Label(text="Admin", fg='black', bg='#FAFAFA', font=("Poppins", 10))
 name.place(x=1100, y=25)
-name = Label(text="saroj07", bg='#FAFAFA', fg='black', font=("Poppins", 10))
+name = Label(text="Test", bg='#FAFAFA', fg='black', font=("Poppins", 10))
 name.place(x=1100, y=5)
 # **********medicine buttons****************************
 medicineframe = Frame(width=250, height=90, bg="#FAFAFA")
@@ -143,7 +143,7 @@ medicineframe.place(x=180, y=100)
 med = Button(root, text="Medicine", border=0, fg='black', bg='#FAFAFA',
              font=("inter", 14), cursor='hand2', command=medicine)
 med.place(x=180, y=100)
-medimg = PhotoImage(file='medi.png')
+medimg = PhotoImage(file='./assets/medi.png')
 medi = Label(root, image=medimg, bg='#FAFAFA', fg='black')
 medi.place(x=370, y=120)
 med_num = Label(root, text=count, fg='black', bg='#FAFAFA', font=("inter", 14))
@@ -154,7 +154,7 @@ categoriesframe.place(x=580, y=100)
 cate = Button(text="Categories", border=0, fg='black', bg='#FAFAFA',
               font=("inter", 14), cursor='hand2', command=category)
 cate.place(x=580, y=100)
-cateimg = PhotoImage(file='categories.png')
+cateimg = PhotoImage(file='./assets/categories.png')
 cat = Label(root, image=cateimg, bg='#FAFAFA', fg='black')
 cat.place(x=770, y=120)
 cate_num = Label(root, text=count1, fg='black',
@@ -164,9 +164,9 @@ cate_num.place(x=590, y=150)
 userframe = Frame(width=250, height=90, bg="#FAFAFA")
 userframe.place(x=1000, y=100)
 user = Button(text="Users", border=0, width=5, fg='black', bg='#FAFAFA', font=(
-    "inter", 14), cursor='hand2', command=settings)
+    "inter", 14), cursor='hand2', command=setting)
 user.place(x=1000, y=100)
-userimg = PhotoImage(file='3-Friends.png')
+userimg = PhotoImage(file='./assets/3-Friends.png')
 use = Label(root, image=userimg, bg='#FAFAFA', fg='black')
 use.place(x=1185, y=120)
 cate_num = Label(root, text=count2, fg='black',

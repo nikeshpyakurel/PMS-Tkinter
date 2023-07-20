@@ -56,12 +56,12 @@ def category():
 def billing():
     root.destroy()
     import billing
-# settings function
+# setting function
 
 
-def settings():
+def setting():
     root.destroy()
-    import settings
+    import setting
 
 # save function
 
@@ -73,7 +73,7 @@ def save():
     else:
         try:
             con = mysql.connect(host='localhost', user='root',
-                                password="saroj@0777", port="3306", database='pharmacy')
+                                password="", port="3306", database='pharmacy_management_system')
             mycursor = con.cursor()
         except:
             messagebox.showerror(
@@ -120,7 +120,7 @@ billing = Button(text='Billing', border=0, bg='#363740', fg='white', font=(
     "Inter", 10, "bold"), cursor='hand2', command=billing)
 billing.place(x=10, y=170)
 setting = Button(text='Pharmacy Setting', border=0, bg='#363740', fg='white', font=(
-    "Inter", 10, "bold"), cursor='hand2', command=settings)
+    "Inter", 10, "bold"), cursor='hand2', command=setting)
 setting.place(x=10, y=210)
 
 
@@ -146,7 +146,7 @@ profile = Label(image=profileImg, fg='black', bg='#FAFAFA')
 profile.place(x=1050, y=0)
 admin = Label(text="Admin", fg='black', bg='#FAFAFA', font=("Poppins", 10))
 admin.place(x=1100, y=25)
-name = Label(text="Saroj Kumar Sah", bg='#FAFAFA',
+name = Label(text="Test", bg='#FAFAFA',
              fg='black', font=("Poppins", 10))
 name.place(x=1100, y=5)
 

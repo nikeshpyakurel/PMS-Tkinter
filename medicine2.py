@@ -10,7 +10,7 @@ height_screen = root.winfo_screenheight()
 root.title("Medicine/pharmacy_management_system")
 root.geometry(f"{width_screen}x{height_screen}")
 root.minsize("400", "300")
-root.iconbitmap('medicine.ico')
+root.iconbitmap('./assets/medicine.ico')
 root.state("zoomed")
 # ****************************dashboard frame************************************
 frame = Frame(width=160, padx=30, bg='#363740')
@@ -18,7 +18,7 @@ frame.pack(side=LEFT, fill=Y)
 
 
 # ****************************logo image************************************
-logoImg = PhotoImage(file='logo.png')
+logoImg = PhotoImage(file='./assets/logo.png')
 logo = Label(image=logoImg, bg='white', fg='black', width=159, height=27)
 logo.place(x=0, y=0)
 
@@ -55,12 +55,12 @@ def category():
 def billing():
     root.destroy()
     import billing
-# settings function
+# setting function
 
 
-def settings():
+def setting():
     root.destroy()
-    import settings
+    import setting
 
 # save function
 
@@ -76,7 +76,7 @@ def save():
     else:
         try:
             con = mysql.connect(host='localhost', user='root',
-                                password="saroj@0777", port="3306", database='pharmacy')
+                                password="", port="3306", database='pharmacy_management_system')
             mycursor = con.cursor()
         except:
             messagebox.showerror(
@@ -120,7 +120,7 @@ dash.place(x=1, y=30)
 medicine = Button(text='Medicine', width=19, height=2, border=0, bg='#595B67',
                   fg='white', font=("Inter", 10, "bold"), cursor='hand2', command=medicine)
 medicine.place(x=1, y=90)
-medicineimg = PhotoImage(file='medicine.png')
+medicineimg = PhotoImage(file='./assets/medicine.png')
 img = Label(root, image=medicineimg, bg='#595B67')
 img.place(x=1, y=95)
 # indicator for medicine
@@ -134,7 +134,7 @@ billing = Button(text='Billing', border=0, bg='#363740', fg='white', font=(
     "Inter", 10, "bold"), cursor='hand2', command=billing)
 billing.place(x=10, y=170)
 setting = Button(text='pharmacy Setting', border=0, bg='#363740', fg='white', font=(
-    "Inter", 10, "bold"), cursor='hand2', command=settings)
+    "Inter", 10, "bold"), cursor='hand2', command=setting)
 setting.place(x=10, y=210)
 
 
@@ -154,12 +154,12 @@ heading = Label(frame1, text='ABC Pharmacy Store', bg='#FAFAFA',
 heading.place(x=100, y=5)
 
 # ************* profile image****************************
-profileImg = PhotoImage(file='profile.png')
+profileImg = PhotoImage(file='./assets/profile.png')
 profile = Label(image=profileImg, fg='black', bg='#FAFAFA')
 profile.place(x=1050, y=0)
 admin = Label(text="Admin", fg='black', bg='#FAFAFA', font=("Poppins", 10))
 admin.place(x=1100, y=25)
-name = Label(text="Saroj Kumar Sah", bg='#FAFAFA',
+name = Label(text="Test", bg='#FAFAFA',
              fg='black', font=("Poppins", 10))
 name.place(x=1100, y=5)
 

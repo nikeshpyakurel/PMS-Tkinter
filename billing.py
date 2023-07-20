@@ -56,12 +56,12 @@ def category():
 def billing():
     root.destroy()
     import billing
-# settings function
+# setting function
 
 
-def settings():
+def setting():
     root.destroy()
-    import settings
+    import setting
 
 
 def next():
@@ -131,7 +131,7 @@ billing.place(x=1, y=170, height=40)
 billing_indicator = Button(root, text='', bg='#FF702A')
 billing_indicator.place(x=1, y=170, width=5, height=40)
 setting = Button(text='Pharmacy Setting', border=0, bg='#363740', fg='white', font=(
-    "Inter", 10, "bold"), cursor='hand2', command=settings)
+    "Inter", 10, "bold"), cursor='hand2', command=setting)
 setting.place(x=10, y=210)
 
 # ***************log out button*******************************
@@ -155,7 +155,7 @@ profile = Label(image=profileImg, fg='black', bg='#FAFAFA')
 profile.place(x=1050, y=0)
 name = Label(text="Admin", fg='black', bg='#FAFAFA', font=("Poppins", 10))
 name.place(x=1100, y=25)
-name = Label(text="Saroj Kumar Sah", bg='#FAFAFA',
+name = Label(text="Test", bg='#FAFAFA',
              fg='black', font=("Poppins", 10))
 name.place(x=1100, y=5)
 
